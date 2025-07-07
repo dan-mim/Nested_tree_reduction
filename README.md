@@ -24,6 +24,10 @@ This repository implements a new, efficient method for scenario tree reduction b
 
 The method is designed for practical use in stochastic decision-making under uncertainty, and is already used by **IFP Energies Nouvelles (IFPEN)** for **energy decision management** applications.
 
+<p align="center">
+  <img src="figs/KP_algo_dessin.PNG" width="800"/>
+</p>
+
 ---
 
 ## 🚀 Key Contributions
