@@ -121,25 +121,11 @@ If you use this project in your research or applications, please cite:
 
 ```
 @article{mimouni2024nested,
-  title={A scalable method for stochastic process approximation using Wasserstein barycenters},
-  author={Mimouni, Daniel},
+  title={Scenario Tree Reduction via Wasserstein Barycenters},
+  author={Mimouni Daniel, Paul Malisani, Jiamin Zhu, Welington de Oliveira},
   year={2024},
   journal={Preprint},
   url={https://dan-mim.github.io/files/reduction_tree.pdf}
-}
-```
-
-And the original method:
-
-```
-@article{kovacevic2015tree,
-  title={Tree approximation for discrete time stochastic processes: a process distance approach},
-  author={Kovacevic, R.M. and Pichler, A.},
-  journal={Annals of Operations Research},
-  volume={235},
-  number={1},
-  pages={395--421},
-  year={2015}
 }
 ```
 
