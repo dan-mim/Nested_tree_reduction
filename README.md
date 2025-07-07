@@ -49,6 +49,19 @@ The method is designed for practical use in stochastic decision-making under unc
 </p>
 
 ---
+## 🔍 Scenario Preselection with Fast Forward Selection
+
+To further enhance scalability, we provide a **Fast Forward Selection** preprocessing routine that reduces the number of scenarios in the original tree **based on the Wasserstein distance**.  
+This heuristic selects the most representative scenarios from a large sample set, ensuring that the retained scenarios maintain maximal distributional coverage.
+
+This selected subset can then be used as a **starting point** for the main reduction algorithm.
+
+⚠️ **Important Note**:  
+The `reduction_tree` method requires a pre-defined **tree structure** (i.e., a filtration with fixed branching), which it does not alter. It adjusts the **probabilities and values** within this structure to minimize the **Nested Distance** to the original process.
+
+Thus, **Fast Forward Selection** is an effective tool to first simplify the size of the scenario space (using Wasserstein metrics), while the core algorithm (`pyreductree`) performs the **refined reduction** in terms of nested distance — preserving temporal dependencies and stage-wise uncertainty.
+
+---
 
 ## 📦 Package Structure
 
@@ -67,7 +80,7 @@ pyreductree/
 
 Additionally:
 
-- `mpi_reduction/`: Parallelized version using **MPI** (`mpi4py`) for large-scale use
+- `mpi_reduction/`: Parallelized version using **MPI** (`mpi4py`) for large-scale use, while pyreductree leverages 
 - `examples/`: Demonstrations and real-world instances
 - `figs/`: Visual outputs and benchmark figures
 
