@@ -12,7 +12,7 @@ from .MAM_MPI import MAM_MPI
 from .LP_tree_reduction import LP_reduction_nt
 from .barycenter_IBP import barycenter_IBP
 from scipy.sparse import csc_matrix
-from pystocoptim import Atom, get_path_values
+from .pystocoptim import Atom, get_path_values
 from dataclasses import dataclass
 
 

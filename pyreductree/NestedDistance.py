@@ -4,7 +4,7 @@ import scipy
 from scipy import optimize
 import time
 import numpy as np
-from pystocoptim import Atom, get_path_values
+from .pystocoptim import Atom, get_path_values
 
 
 __all__ = ["nested_distance"]

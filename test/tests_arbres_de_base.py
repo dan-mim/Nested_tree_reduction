@@ -6,28 +6,21 @@ original_filtration = generate_uniform_tree(typearbre=3, seed=0, depth=6)
 reduced_filtration = generate_uniform_tree(typearbre=2, seed=0, depth=6)
 
 # Turn filtration into trees (networkx)
-# H = filtration_into_networkx_tree(original_filtration)
-# G = filtration_into_networkx_tree(reduced_filtration)
-# from reduction import *
-# dist0 = distance_GH(G, H)[0]
-
+H = filtration_into_networkx_tree(original_filtration)
 # Visualize
-# from reduction_tree_0.visualization_tree import *
-# draw_tree(H)
+from pyreductree.visualization_tree import *
+draw_tree(H)
 
 # REDUCTION
 # Filtration based Reduction
 reduced_filtration2, distance_nd = KP_reduction(
-    original_filtration, reduced_filtration, method='LP', delta=1000,  itred=7, npool=1, lambda_IBP=100, rho=1000,
+    original_filtration, reduced_filtration, method='LP',
+    delta=1000,  itred=7, npool=1,
+    lambda_IBP=100, rho=1000,
     precisionMAM=10**-4)
-
-# # Tree based Reduction
-# res = KP_reduction1(H,G, method='LP', delta=1000,  itred=7, npool=1, lambda_IBP=100, rho=1000, precisionMAM=10**-4)
-# improved_G = res['G']
 
 # COMPARE distances
 reduced_tree = filtration_into_networkx_tree(reduced_filtration2)
-# dist_filtr = distance_GH(reduced_tree, H)[0]
 dist_filtr2 = nested_distance(original_filtration, reduced_filtration2)
 print(dist_filtr2)
 

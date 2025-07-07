@@ -1,4 +1,4 @@
-from pystocoptim import Atom
+from .pystocoptim import Atom
 import numpy as np
 import random
 import networkx as nx
