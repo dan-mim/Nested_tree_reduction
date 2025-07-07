@@ -58,6 +58,7 @@ For large-scale scenario trees, the following table compares the performance of 
 <p align="center">
   <img src="figs/performanc.PNG" width="500"/>
 </p>
+
 ---
 ## 🔍 Scenario Preselection with Fast Forward Selection
 
