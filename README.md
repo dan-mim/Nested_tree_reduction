@@ -28,18 +28,24 @@ The method is designed for practical use in stochastic decision-making under unc
 
 ## 🚀 Key Contributions
 
-- ✅ Efficient and modular implementation of **Kovacevic–Pichler reduction**:
-  > Kovacevic, R.M., & Pichler, A. (2015). Tree approximation for discrete time stochastic processes: a process distance approach. *Annals of Operations Research*, 235(1), 395–421.
+- ✅ This repository implements a **boosted version** of the classical **Kovacevic–Pichler scenario tree reduction** method:  
+  > Kovacevic, R.M., & Pichler, A. (2015). *Tree approximation for discrete time stochastic processes: a process distance approach*,  
+  > *Annals of Operations Research*, 235(1), 395–421.
 
-- ⚡ Fast computation of nested barycenters using **optimal transport solvers**:
-  - [IBP (Sinkhorn)] — entropic method
-  - [MAM (Method of Averaged Marginals)] — exact projection method
+  The core innovation introduced in [Mimouni et al. (2024)](https://dan-mim.github.io/files/reduction_tree.pdf) is the identification that each subtree reduction step is equivalent to solving an **optimal transport barycenter problem** — a viewpoint that was previously overlooked.
+
+- ⚡ Leveraging this insight, the algorithm integrates **state-of-the-art Wasserstein barycenter solvers** to drastically accelerate the reduction process:
+  - **IBP (Sinkhorn)**: entropic regularization method ([see more here](https://github.com/dan-mim/Wasserstein-barycenters))
+  - **MAM (Method of Averaged Marginals)**: exact projection method based on Douglas–Rachford splitting (introduced by Mimouni et al. in 2024 - [see more here](https://github.com/dan-mim/Computing-Wasserstein-Barycenters-MAM))
+
+- 🧱 The result is a **production-ready library** that combines theoretical guarantees with computational efficiency — currently deployed at **IFPEN** for real-world energy management problems under uncertainty.
+
 
 - 🧠 Insight: the **reduction of a scenario tree** can be expressed as a **succession of Wasserstein barycenter problems**.  
   At each stage, an optimal subtree corresponds to the **barycenter of original subtrees**, weighted by their probability.
 
 <p align="center">
-  <img src="figs/nested_barycenter_explained.png" width="650"/>
+  <img src="figs/bary_tree.PNG" width="800"/>
 </p>
 
 ---
