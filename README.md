@@ -83,6 +83,8 @@ Additionally:
 - `figs/`: Visual outputs and benchmark figures
 
 Note that the parallelization is computed using **MPI** (`mpi4py`) for large-scale use
+
+
 ---
 
 ## 🔧 Installation
