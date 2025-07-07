@@ -48,6 +48,12 @@ The method is designed for practical use in stochastic decision-making under unc
   <img src="figs/bary_tree.PNG" width="800"/>
 </p>
 
+For large-scale scenario trees, the following table compares the performance of the different approaches:  
+- **LP** refers to the original linear programming formulation by Kovacevic and Pichler.  
+- The other columns showcase the **boosted version** introduced in this work, where subproblems are solved using state-of-the-art **Wasserstein barycenter solvers** (MAM and IBP), with the additional benefit of **parallelization** to enhance scalability and execution speed.
+<p align="center">
+  <img src="figs/performanc.PNG" width="500"/>
+</p>
 ---
 ## 🔍 Scenario Preselection with Fast Forward Selection
 
@@ -60,6 +66,12 @@ This selected subset can then be used as a **starting point** for the main reduc
 The `reduction_tree` method requires a pre-defined **tree structure** (i.e., a filtration with fixed branching), which it does not alter. It adjusts the **probabilities and values** within this structure to minimize the **Nested Distance** to the original process.
 
 Thus, **Fast Forward Selection** is an effective tool to first simplify the size of the scenario space (using Wasserstein metrics), while the core algorithm (`pyreductree`) performs the **refined reduction** in terms of nested distance — preserving temporal dependencies and stage-wise uncertainty.
+
+Below, some results showing how classical method like FFS can produce improved results by using the proposed pipeline:
+<p align="center">
+  <img src="figs/FFS_KP.PNG" width="500"/>
+</p>
+---
 
 ---
 
