@@ -79,11 +79,10 @@ pyreductree/
 ```
 
 Additionally:
-
-- `mpi_reduction/`: Parallelized version using **MPI** (`mpi4py`) for large-scale use, while pyreductree leverages 
 - `examples/`: Demonstrations and real-world instances
 - `figs/`: Visual outputs and benchmark figures
 
+Note that the parallelization is computed using **MPI** (`mpi4py`) for large-scale use
 ---
 
 ## 🔧 Installation
